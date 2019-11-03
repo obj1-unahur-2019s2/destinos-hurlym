@@ -1,0 +1,54 @@
+import Socio.*
+import Viaje.*
+import ViajeDePlaya.*
+import ClaseGimnasia.*
+
+
+
+describe "Test Socio"{
+	var Roque = new Socio()
+	var ViajePlay1 = new ViajeDePlaya()
+	var ViajePlay2 = new ViajeDePlaya()
+	var Gym = new ClaseGimnasia()
+	var Ana = new Socio()
+	
+	
+	
+	
+	test "Test Roque" {
+		
+		ViajePlay1.largoPlaya(1000)
+		ViajePlay2.largoPlaya(2000)
+		Roque.agregarActividad(ViajePlay1)
+		Roque.agregarActividad(ViajePlay2)
+		Roque.actMaximas(2)
+		
+		assert.that(Roque.adoradorDelSol())
+		//assert.equals(ViajePlay2, Roque.actEsforzadas())
+	  	Roque.agregarActividad(Gym)
+	  	
+	  
+	  
+	  
+	}
+	
+	test "Test Ana" {
+		
+		
+	  	
+	  	ViajePlay1.largoPlaya(1000)
+		ViajePlay2.largoPlaya(2000)
+		Ana.agregarActividad(ViajePlay1)
+		Ana.agregarActividad(ViajePlay2)
+		Ana.actMaximas(3)
+		
+		assert.that(Ana.adoradorDelSol())
+		//assert.equals(ViajePlay2, Roque.actEsforzadas())
+	  	Ana.agregarActividad(Gym)
+	  	assert.that(not Ana.adoradorDelSol())
+	  
+	  
+	  
+	}
+	
+}

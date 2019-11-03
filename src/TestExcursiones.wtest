@@ -1,0 +1,63 @@
+import ExcursionCiudad.*
+import ExcursionACiudadTropical.*
+import Viaje.*
+
+describe "Test Excursiones"{
+	var ExcurcionCiud = new ExcursionCiudad()
+	var ExcursionTrop = new ExcursionACiudadTropical()
+	
+	
+	
+	test "Excursion Ciudad Cuatro Atracciones" {
+		
+		ExcurcionCiud.cantAtracciones(4)
+		assert.equals(2, ExcurcionCiud.diasDeViaje())
+		assert.that(not ExcurcionCiud.esfuerzo())
+		assert.that(not ExcurcionCiud.broncearse())
+	  
+	  
+	}
+	
+	test "Excursion Ciudad Tropical Cuatro Atracciones" {
+		
+		ExcursionTrop.cantAtracciones(4)
+		assert.equals(3, ExcursionTrop.diasDeViaje())
+		assert.that(not ExcursionTrop.esfuerzo())
+		assert.that(ExcursionTrop.broncearse())
+	  
+	  
+	}
+	
+	test "Excursion Ciudad ocho Atracciones" {
+		
+		ExcurcionCiud.cantAtracciones(8)
+		assert.equals(4, ExcurcionCiud.diasDeViaje())
+		assert.that(ExcurcionCiud.esfuerzo())
+		assert.that(not ExcurcionCiud.broncearse())
+	  
+	  
+	}
+	
+	test "Excursion Ciudad Tropical ocho Atracciones" {
+		
+		ExcursionTrop.cantAtracciones(8)
+		assert.equals(5, ExcursionTrop.diasDeViaje())
+		assert.that(ExcursionTrop.esfuerzo())
+		assert.that(ExcursionTrop.broncearse())
+	  
+	  
+	}
+	
+	test "Excursion Ciudad Tropical diez Atracciones" {
+		
+		ExcursionTrop.cantAtracciones(10)
+		assert.equals(6, ExcursionTrop.diasDeViaje())
+		assert.that(not ExcursionTrop.esfuerzo())
+		assert.that(ExcursionTrop.broncearse())
+	  
+	  
+	}
+
+	
+	
+}

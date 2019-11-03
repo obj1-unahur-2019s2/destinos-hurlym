@@ -1,0 +1,47 @@
+import SalidaTrekking.*
+
+import Viaje.*
+
+describe "Test Excursiones"{
+	var SalTrek = new SalidaTrekking()
+	
+	
+	
+	
+	test "Trekking 100 km" {
+		
+		SalTrek.kilometrosDeSendero(100)
+		SalTrek.diasDeSol(130)
+		assert.equals(2, SalTrek.diasDeViaje())
+		assert.that(SalTrek.esfuerzo())
+		assert.that(not SalTrek.broncearse())
+	  
+	  
+	}
+	
+	test "Trekking 50 km" {
+		
+		SalTrek.kilometrosDeSendero(50)
+		SalTrek.diasDeSol(240)
+		assert.equals(1, SalTrek.diasDeViaje())
+		assert.that(not SalTrek.esfuerzo())
+		assert.that(SalTrek.broncearse())
+	  
+	  
+	}
+	
+	test "Trekking 250 km" {
+		
+		SalTrek.kilometrosDeSendero(250)
+		SalTrek.diasDeSol(130)
+		assert.equals(5, SalTrek.diasDeViaje())
+		assert.that(SalTrek.esfuerzo())
+		assert.that(SalTrek.broncearse())
+	  
+	  
+	}
+	
+	
+	
+	
+}
